@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title> 不一样的烟火</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      
+<link rel="stylesheet" href="/css/fonts/remixicon.css">
+
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.staticfile.org/pace/1.2.4/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    </head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      <canvas class="fireworks"></canvas>
+      <style>
+        .fireworks {
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 99999;
+          pointer-events: none;
+        }
+      </style>
+      
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-Java易错点"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2024/06/16/Java%E6%98%93%E9%94%99%E7%82%B9/" class="article-date">
+  <time datetime="2024-06-16T14:11:55.429Z" itemprop="datePublished">2024-06-16</time>
+</a>   
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">16.9k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">60 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="java考试题目"><a href="#java考试题目" class="headerlink" title="java考试题目"></a>java考试题目</h1><p>1.选择题（2*20）</p>
+<p>2.填空题（2*10）</p>
+<p>3.简答题（2*5）（概念）</p>
+<p>（1）类：一个模板，蓝本或者合约</p>
+<p>（2）抽象：类的实现和使用分离</p>
+<p>（3）封装：对用户隐藏实现的细节</p>
+<p>（4）合约：方法和数据域的集合以及如何行为的描述（包含了一组定义了软件组件行为和交互方式的规则，期望和保证）</p>
+<p>（5）继承：从已经存在的类定义新的类</p>
+<p>（6）方法重写：子类重新实现父类中定义的方法</p>
+<p>（7）多态：使用父类对象的地方可以使用子类对象（简单地说就是父类型的变量可以引用子类型的对象）</p>
+<p>（8）动态绑定：被调用的方法有实际类型决定，这成为动态绑定</p>
+<p>4.编程题（1*30）</p>
+<span id="more"></span>
+
+<h2 id="图片信息"><a href="#图片信息" class="headerlink" title="图片信息"></a>图片信息</h2><h3 id="源文件（-java）和字节码文件（-class）"><a href="#源文件（-java）和字节码文件（-class）" class="headerlink" title="源文件（.java）和字节码文件（.class）"></a>源文件（.java）和字节码文件（.class）</h3><ul>
+<li><strong>源文件（.java）</strong>：这是包含Java代码的文件，其扩展名为<code>.java</code>。这个文件包含了类、接口、变量、方法等的定义和声明。</li>
+<li><strong>字节码文件（.class）</strong>：当你使用Java编译器（如<code>javac</code>）编译一个<code>.java</code>文件时，它会生成一个或多个<code>.class</code>文件。这些文件包含了Java字节码，这是Java虚拟机（JVM）可以理解和执行的代码。</li>
+</ul>
+<h3 id="文件名和类名一致"><a href="#文件名和类名一致" class="headerlink" title="文件名和类名一致"></a>文件名和类名一致</h3><p>在Java中，公共类（public class）的类名必须与包含它的源文件的文件名一致（不包括<code>.java</code>扩展名）。例如，如果有一个名为<code>MyClass.java</code>的源文件，那么它应该包含一个公共类<code>MyClass</code>。</p>
+<h3 id="文件目录和命名空间以及import"><a href="#文件目录和命名空间以及import" class="headerlink" title="文件目录和命名空间以及import"></a>文件目录和命名空间以及import</h3><ul>
+<li><strong>文件目录</strong>：Java源文件通常组织在目录（或包）中，以反映其命名空间。例如，一个名为<code>com.example.myapp</code>的包可能包含位于<code>com/example/myapp</code>目录中的源文件。</li>
+<li><strong>命名空间（包package）</strong>：Java使用包来组织类，以防止命名冲突并提供访问控制。通过声明<code>package</code>语句，可以将类放入特定的包中。</li>
+<li><strong>import</strong>：使用<code>import</code>语句，Java程序可以引用其他包中的类，从而避免在代码中重复写完整的类名。</li>
+</ul>
+<h3 id="控制台：cmd-javac-and-java"><a href="#控制台：cmd-javac-and-java" class="headerlink" title="控制台：cmd, javac and java"></a>控制台：cmd, javac and java</h3><ul>
+<li><strong>cmd（命令提示符）</strong>：这是Windows操作系统中的一个命令行界面，允许用户输入和执行命令。</li>
+<li><strong>javac</strong>：这是Java编译器命令。当你在命令提示符中输入<code>javac MyClass.java</code>时，它会编译<code>MyClass.java</code>文件并生成一个或多个<code>.class</code>文件。</li>
+<li><strong>java</strong>：这是Java运行时命令。使用它来运行Java程序。例如，<code>java MyClass</code>会运行<code>MyClass</code>类中的<code>main</code>方法。</li>
+</ul>
+<h3 id="IDE（集成开发环境）"><a href="#IDE（集成开发环境）" class="headerlink" title="IDE（集成开发环境）"></a>IDE（集成开发环境）</h3><p>IDE是一个软件应用程序，它提供了一套全面的工具来开发软件。对于Java，流行的IDE包括Eclipse、IntelliJ IDEA、NetBeans等。这些IDE通常提供了代码编辑、编译、调试、版本控制等功能，以及自动完成、重构、重构等高级功能。</p>
+<h3 id="三类错误"><a href="#三类错误" class="headerlink" title="三类错误"></a>三类错误</h3><ol>
+<li><strong>Syntax Errors（语法错误）</strong>：当Java编译器无法识别你的代码时，就会发生语法错误。这通常是由于拼写错误、缺少分号、括号不匹配等原因造成的。语法错误必须在尝试运行程序之前进行修复。</li>
+<li><strong>Runtime Errors（运行时错误）</strong>：这些错误发生在程序运行时，而不是在编译时。它们通常是由于程序试图执行不可能的操作（如除以零）或访问不存在的资源（如数组越界）而引起的。运行时错误可能导致程序崩溃，并显示错误消息。</li>
+<li><strong>Logic Errors（逻辑错误）</strong>：逻辑错误是程序中的错误，它不会导致编译或运行时错误，但会导致程序不按预期工作。这可能是由于算法错误、条件判断错误、循环逻辑错误等原因造成的。逻辑错误通常是最难发现和修复的错误类型，因为它们可能需要深入理解程序的逻辑和预期行为。</li>
+</ol>
+<h3 id="数值数据类型-Numerical-Data-Types"><a href="#数值数据类型-Numerical-Data-Types" class="headerlink" title="数值数据类型 (Numerical Data Types)"></a>数值数据类型 (Numerical Data Types)</h3><p>Java 中的数值数据类型分为整数类型（byte, short, int, long）和浮点数类型（float, double）。</p>
+<h4 id="1-范围和大小"><a href="#1-范围和大小" class="headerlink" title="1. 范围和大小"></a>1. 范围和大小</h4><ul>
+<li><strong>byte</strong>: 8位，范围从-128到127。</li>
+<li><strong>short</strong>: 16位，范围从-32,768到32,767。</li>
+<li><strong>int</strong>: 32位，范围从-2,147,483,648到2,147,483,647（默认情况下）。</li>
+<li><strong>long</strong>: 64位，范围非常大。</li>
+<li><strong>float</strong>: 32位IEEE 754单精度浮点数。</li>
+<li><strong>double</strong>: 64位IEEE 754双精度浮点数。</li>
+</ul>
+<p>注意：<code>float</code> 和 <code>double</code> 之所以不精确，是因为它们采用浮点表示法，存在舍入误差。</p>
+<h4 id="2-运算符"><a href="#2-运算符" class="headerlink" title="2. 运算符"></a>2. 运算符</h4><ul>
+<li><strong>+</strong>: 加法</li>
+<li><strong>-</strong>: 减法</li>
+<li><strong>x</strong>: 这可能是一个打字错误，通常用于乘法的是 <code>*</code></li>
+<li><strong>&#x2F;</strong>: 除法</li>
+<li><strong>%</strong>: 取余（模运算）</li>
+</ul>
+<h4 id="3-数字字面量"><a href="#3-数字字面量" class="headerlink" title="3. 数字字面量"></a>3. 数字字面量</h4><ul>
+<li><strong>L 或 l</strong>: 用于表示 <code>long</code> 类型的字面量，如 <code>123L</code>。但通常推荐使用大写 <code>L</code> 以避免与数字 <code>1</code> 混淆。</li>
+<li><strong>F 或 f</strong>: 用于表示 <code>float</code> 类型的字面量，如 <code>1.23F</code>。</li>
+<li><strong>E 或 e</strong>: 用于表示科学计数法中的指数部分，如 <code>1.23E4</code> 表示 <code>1.23 * 10^4</code>。</li>
+</ul>
+<h4 id="4-类型转换"><a href="#4-类型转换" class="headerlink" title="4. 类型转换"></a>4. 类型转换</h4><ul>
+<li><strong>隐式转换 (Implicit Conversion)</strong>: 当较小类型的数据与较大类型的数据混合使用时，较小类型的数据会自动转换为较大类型。例如，<code>int</code> 和 <code>long</code> 运算时，<code>int</code> 会被转换为 <code>long</code>。</li>
+<li><strong>显式转换 (Explicit Conversion)</strong>: 也称为强制类型转换，当需要将较大类型的数据转换为较小类型，或者进行不安全的类型转换时，需要使用显式转换。例如，将 <code>double</code> 转换为 <code>int</code> 时需要显式转换，因为 <code>double</code> 可能包含小数部分，而 <code>int</code> 不能。</li>
+</ul>
+<h3 id="Character-类型"><a href="#Character-类型" class="headerlink" title="Character 类型"></a>Character 类型</h3><ul>
+<li><strong>char</strong>: 用于存储单个字符。Java中的 <code>char</code> 类型使用UTF-16编码，可以表示Unicode字符集中的字符。一个 <code>char</code> 占用16位（2字节）。</li>
+</ul>
+<h3 id="Boolean-类型"><a href="#Boolean-类型" class="headerlink" title="Boolean 类型"></a>Boolean 类型</h3><ul>
+<li><strong>boolean</strong>: 用于表示逻辑值，只有两个可能的值：<code>true</code> 和 <code>false</code>。常用于条件语句和循环语句中。</li>
+</ul>
+<h3 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h3><ul>
+<li><strong>&gt;</strong>: 大于</li>
+<li><strong>&gt;&#x3D;</strong>: 大于或等于</li>
+<li><strong>&lt;</strong>: 小于</li>
+<li><strong>&lt;&#x3D;</strong>: 小于或等于</li>
+<li><strong>&#x3D;</strong>: 赋值运算符（注意，比较运算符是 <code>==</code>）</li>
+<li><strong>!&#x3D;</strong>: 不等于</li>
+<li><strong>&amp;&amp;</strong>: 逻辑与</li>
+<li><strong>||</strong>: 逻辑或</li>
+<li><strong>^</strong>: 逻辑异或（但在Java中，通常不使用 <code>^</code> 进行逻辑异或，而是使用 <code>!=</code> 或 <code>==</code> 与其他比较运算符组合）</li>
+</ul>
+<h3 id="自增和自减运算符"><a href="#自增和自减运算符" class="headerlink" title="自增和自减运算符"></a>自增和自减运算符</h3><ul>
+<li><strong>++</strong>: 自增运算符，使变量的值加1。可以放在变量前面（前置自增）或后面（后置自增）。</li>
+<li><strong>–</strong>: 自减运算符，使变量的值减1。同样，也可以放在变量前面（前置自减）或后面（后置自减）。</li>
+</ul>
+<p>注意：前置自增&#x2F;自减会先执行加&#x2F;减操作，然后返回变量的值；而后置自增&#x2F;自减会先返回变量的原始值，然后执行加&#x2F;减操作。</p>
+<h3 id="操作符的优先级和结合性"><a href="#操作符的优先级和结合性" class="headerlink" title="操作符的优先级和结合性"></a>操作符的优先级和结合性</h3><p>在Java中，操作符有不同的优先级，这决定了当多个操作符出现在同一个表达式中时，它们的执行顺序。同时，操作符还有结合性，它决定了当操作符具有相同的优先级时，它们的组合方式。</p>
+<ul>
+<li><strong>从左到右（Left-to-Right）</strong>：像赋值操作符（<code>=</code>、<code>+=</code>、<code>-=</code>等）是从右到左结合的，但这并不意味着它们的优先级低。这仅意味着当连续使用这些操作符时，右边的操作会先发生。例如，在<code>a = b = c;</code>中，<code>c</code>的值首先赋给<code>b</code>，然后<code>b</code>的值（即<code>c</code>的值）再赋给<code>a</code>。</li>
+<li><strong>优先级（Precedence）</strong>：操作符的优先级决定了在没有括号的情况下，哪些操作符会首先被计算。例如，乘法（<code>*</code>）和除法（<code>/</code>）的优先级高于加法（<code>+</code>）和减法（<code>-</code>）。所以，<code>3 + 4 * 2</code> 的结果是 <code>11</code> 而不是 <code>14</code>，因为 <code>4 * 2</code> 首先被计算。</li>
+<li><strong>结合性（Associativity）</strong>：当操作符具有相同的优先级时，结合性决定了它们的计算顺序。例如，乘法和除法（以及加法和减法）都是从左到右结合的。所以，<code>6 / 2 / 1</code> 的结果是 <code>3</code>，因为 <code>6</code> 首先除以 <code>2</code> 得到 <code>3</code>，然后 <code>3</code> 再除以 <code>1</code> 还是 <code>3</code>。</li>
+</ul>
+<h3 id="字符串到数值数据类型的转换"><a href="#字符串到数值数据类型的转换" class="headerlink" title="字符串到数值数据类型的转换"></a>字符串到数值数据类型的转换</h3><p>Java提供了几种方法来将字符串转换为数值数据类型：</p>
+<ul>
+<li>**Integer.parseInt(String s)**：将字符串参数 <code>s</code> 转换为 <code>int</code> 类型的整数值。如果字符串不能被解析为一个有效的 <code>int</code> 值，该方法会抛出一个 <code>NumberFormatException</code>。</li>
+<li>**Double.parseDouble(String s)**：将字符串参数 <code>s</code> 转换为 <code>double</code> 类型的浮点数值。同样，如果字符串不能被解析为一个有效的 <code>double</code> 值，该方法会抛出一个 <code>NumberFormatException</code>。</li>
+</ul>
+<h3 id="Scanner-类"><a href="#Scanner-类" class="headerlink" title="Scanner 类"></a>Scanner 类</h3><p><code>Scanner</code> 类是Java的一个实用工具类，用于从各种输入源（如键盘、文件等）读取原始数据，并将其转换为各种基本数据类型。</p>
+<ul>
+<li>**new Scanner(System.in)**：创建一个新的 <code>Scanner</code> 对象，用于从标准输入（通常是键盘）读取数据。</li>
+<li>**next()**：读取下一个完整的标记（由空白字符分隔，如空格、制表符或换行符）。这个方法返回的是字符串。</li>
+<li>**nextInt()**：读取下一个整数。</li>
+<li>**nextLong()**：读取下一个长整型数。</li>
+<li>**…**：还有其他类似的方法，如 <code>nextDouble()</code>、<code>nextFloat()</code>、<code>nextBoolean()</code> 等，用于读取相应类型的值。</li>
+<li>**nextLine()**：读取整行的输入，包括空格和制表符，直到遇到换行符。这个方法也返回字符串。</li>
+</ul>
+<p>使用 <code>Scanner</code> 类时，通常需要在完成后调用其 <code>close()</code> 方法来关闭它，以释放与之关联的资源。然而，当 <code>Scanner</code> 对象与 <code>System.in</code> 相关联时，通常不需要（也不应该）关闭它，因为 <code>System.in</code> 是由JVM管理的，并且不是通过 <code>Scanner</code> 创建的资源。</p>
+<h3 id="boolean数据类型"><a href="#boolean数据类型" class="headerlink" title="boolean数据类型"></a>boolean数据类型</h3><p><code>boolean</code> 是Java中的基本数据类型，用于表示逻辑值。它只有两个可能的值：<code>true</code> 和 <code>false</code>。这些值称为布尔直接量（或字面量）。</p>
+<h3 id="关系操作符和逻辑操作符"><a href="#关系操作符和逻辑操作符" class="headerlink" title="关系操作符和逻辑操作符"></a>关系操作符和逻辑操作符</h3><p><strong>关系操作符</strong>（也称为比较操作符）用于比较两个值，并返回一个布尔值（<code>true</code> 或 <code>false</code>）。Java中的关系操作符包括：</p>
+<ul>
+<li><code>==</code>（等于）</li>
+<li><code>!=</code>（不等于）</li>
+<li><code>&gt;</code>（大于）</li>
+<li><code>&lt;</code>（小于）</li>
+<li><code>&gt;=</code>（大于或等于）</li>
+<li><code>&lt;=</code>（小于或等于）</li>
+</ul>
+<p><strong>逻辑操作符</strong>用于组合布尔值，并返回新的布尔值。Java中的逻辑操作符包括：</p>
+<ul>
+<li><code>&amp;&amp;</code>（逻辑与）</li>
+<li><code>||</code>（逻辑或）</li>
+<li><code>!</code>（逻辑非）</li>
+</ul>
+<h3 id="if和if-else语句"><a href="#if和if-else语句" class="headerlink" title="if和if-else语句"></a>if和if-else语句</h3><p><code>if</code> 语句用于基于某个条件执行代码块。如果条件为 <code>true</code>，则执行 <code>if</code> 语句后的代码块。</p>
+<p><code>if-else</code> 语句允许你指定一个条件，并根据该条件是否为 <code>true</code> 或 <code>false</code> 来执行不同的代码块。</p>
+<p><strong>常见错误</strong>：</p>
+<ul>
+<li>忘记写条件括号 <code>()</code> 内的比较操作符（例如，只写了 <code>if (x y)</code> 而不是 <code>if (x == y)</code>）。</li>
+<li>逻辑错误，即条件表达式不符合预期的逻辑（例如，使用 <code>&amp;&amp;</code> 而不是 <code>||</code>，或者颠倒了比较操作符的方向）。</li>
+<li>缩进或格式错误，这可能会导致代码可读性下降，甚至在某些情况下影响程序的行为（尽管这更多是一个样式问题，而不是逻辑错误）。</li>
+</ul>
+<h3 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a>switch语句</h3><p><code>switch</code> 语句用于基于变量的值来执行不同的代码块。<code>switch</code> 语句后面的表达式必须是 <code>char</code>、<code>byte</code>、<code>short</code>、<code>int</code> 或者枚举类型（从Java 5开始），以及从Java 7开始，你还可以使用 <code>String</code> 类型。</p>
+<h3 id="条件表达式（三元操作符）"><a href="#条件表达式（三元操作符）" class="headerlink" title="条件表达式（三元操作符）"></a>条件表达式（三元操作符）</h3><p>条件表达式（也称为三元操作符）允许你基于某个条件来返回两个值中的一个。它的语法是 <code>条件 ? 值1 : 值2</code>。如果条件为 <code>true</code>，则返回 <code>值1</code>；否则返回 <code>值2</code>。</p>
+<h3 id="Math-random"><a href="#Math-random" class="headerlink" title="Math.random"></a>Math.random</h3><p><code>Math.random()</code> 是Java中的一个方法，用于生成一个介于 [0.0, 1.0) 之间的随机浮点数（包括0.0，不包括1.0）。</p>
+<p>是平台的默认包，不需要现实的导入</p>
+<p><strong>如何生成指定范围的随机整数</strong>：</p>
+<p>假设你想生成一个介于 <code>min</code>（包含）和 <code>max</code>（不包含）之间的随机整数，你可以使用以下公式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">java复制代码</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="variable">randomInt</span> <span class="operator">=</span> (<span class="type">int</span>) (Math.random() * (max - min) + min);</span><br></pre></td></tr></table></figure>
+
+<p>但是，请注意，由于 <code>Math.random()</code> 返回的是一个浮点数，直接乘以 <code>max - min</code> 可能会导致结果稍微超出 <code>max</code> 的范围（尤其是当 <code>max</code> 和 <code>min</code> 的差值很大时）。为了避免这个问题，你应该先计算浮点数结果，然后将其转换为整数：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">java复制代码</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="variable">randomInt</span> <span class="operator">=</span> (<span class="type">int</span>) (Math.random() * (max - min + <span class="number">1</span>)) + min;</span><br></pre></td></tr></table></figure>
+
+<p>这样，你就可以确保生成的随机整数在指定的范围内了。（一定要注意最后的1呦）</p>
+<h3 id="Math-类"><a href="#Math-类" class="headerlink" title="Math 类"></a>Math 类</h3><p><code>Math</code> 类是 Java 提供的一个工具类，它包含了一系列用于执行基本数学运算的静态方法。以下是您提到的几个方法的解释：</p>
+<ul>
+<li><code>ceil(double a)</code>: 返回大于或等于参数的最小整数（向上取整）。</li>
+<li><code>floor(double a)</code>: 返回小于或等于参数的最大整数（向下取整）。</li>
+<li><code>rint(double a)</code>: 返回最接近参数的 <code>long</code> 值（向零舍入）。</li>
+<li><code>round(float a) / round(double a)</code>: 返回最接近参数的 <code>int</code> 或 <code>long</code> 值（四舍五入）。</li>
+<li><code>min(int a, int b) / min(double a, double b)</code>: 返回两个参数中的较小值。对于浮点数，如果参数值相等或相差极小，则结果是第一个参数。</li>
+<li><code>max(int a, int b) / max(double a, double b)</code>: 返回两个参数中的较大值。对于浮点数，如果参数值相等或相差极小，则结果是第一个参数。</li>
+<li><code>abs(int a) / abs(long a) / abs(float a) / abs(double a)</code>: 返回参数的绝对值。</li>
+<li><code>random()</code>: 返回一个 [0.0, 1.0) 之间的 <code>double</code> 值。</li>
+</ul>
+<h3 id="char-类型"><a href="#char-类型" class="headerlink" title="char 类型"></a>char 类型</h3><ul>
+<li><strong>Unicode 和 ASCII</strong>：<ul>
+<li>Unicode 是一个字符集，它为世界上几乎所有的书写系统中使用的字符提供了唯一的数字代码。</li>
+<li>ASCII（美国信息交换标准代码）是一个早期的字符编码标准，只包含了128个字符（0-127）。</li>
+</ul>
+</li>
+<li><strong>转义序列</strong>：在 Java 字符串中，转义序列用于表示无法直接输入的字符或具有特殊含义的字符。例如，<code>\n</code> 表示换行符，<code>\t</code> 表示制表符。</li>
+<li><strong>字符型数据与数值型数据之间的转换</strong>：<ul>
+<li>字符可以转换为数值型（如 <code>int</code> 或 <code>char</code> 到 <code>int</code> 的转换）。例如，字符 <code>&#39;A&#39;</code> 的 ASCII 值是 65。</li>
+<li>数值型也可以转换为字符。例如，将整数 65 转换为字符，结果是 <code>&#39;A&#39;</code>。</li>
+</ul>
+</li>
+<li><strong>字符的比较和测试</strong>：字符可以像其他数据类型一样进行比较（使用 <code>==</code>, <code>&lt;</code>, <code>&gt;</code> 等操作符）。也可以使用 <code>Character</code> 类中的方法来测试字符的属性（如 <code>isDigit()</code>, <code>isLetter()</code>, <code>isUpperCase()</code> 等）。</li>
+</ul>
+<h3 id="String-类型"><a href="#String-类型" class="headerlink" title="String 类型"></a>String 类型</h3><ul>
+<li><strong>常见操作（方法）</strong>：<ul>
+<li><code>substring(int beginIndex, int endIndex)</code>: 返回一个新字符串，它是此字符串的一个子字符串。</li>
+<li><code>indexOf(int ch) / indexOf(String str)</code>: 返回指定字符或子字符串在此字符串中第一次出现处的索引，如果此字符串不包含该字符或子字符串，则返回 -1。</li>
+<li><code>equals(Object anObject)</code>: 将此字符串与指定的对象进行比较。</li>
+<li><code>split(String regex)</code>: 根据给定的正则表达式的匹配拆分此字符串。</li>
+</ul>
+</li>
+<li><strong>从控制台读取</strong>：通常使用 <code>Scanner</code> 类的 <code>nextLine()</code> 方法从控制台读取字符串。</li>
+<li><strong>字符串和数字间的转换</strong>：<ul>
+<li>使用 <code>Integer.parseInt(String s)</code> 或 <code>Double.parseDouble(String s)</code> 可以将字符串转换为整数或浮点数。</li>
+<li>使用 <code>String.valueOf(int i)</code> 或 <code>Integer.toString(int i)</code> 可以将整数转换为字符串。</li>
+</ul>
+</li>
+<li><strong>格式化控制台</strong>：可以使用 <code>System.out.printf()</code> 方法或 <code>String.format()</code> 方法来格式化字符串，并将其输出到控制台。这些方法使用占位符（如 <code>%d</code> 表示整数，<code>%f</code> 表示浮点数）和参数来生成格式化的字符串。</li>
+</ul>
+<h3 id="while、do-while、for循环"><a href="#while、do-while、for循环" class="headerlink" title="while、do-while、for循环"></a>while、do-while、for循环</h3><ol>
+<li><p><strong>while循环</strong>：<br><code>while</code> 循环会先判断条件表达式，如果条件为真（<code>true</code>），则执行循环体中的代码块，然后再次判断条件表达式，如此循环直到条件为假（<code>false</code>）。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (condition) &#123;  </span><br><span class="line">    <span class="comment">// 循环体  </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>do-while循环</strong>：<br><code>do-while</code> 循环会先执行一次循环体中的代码块，然后判断条件表达式，如果条件为真（<code>true</code>），则再次执行循环体，如此循环直到条件为假（<code>false</code>）。<code>do-while</code> 循环至少会执行一次循环体。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span> &#123;  </span><br><span class="line">    <span class="comment">// 循环体  </span></span><br><span class="line">&#125; <span class="keyword">while</span> (condition);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>for循环</strong>：<br><code>for</code> 循环用于执行固定次数的循环，或在循环条件满足时执行。它通常用于遍历数组或集合。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (initialization; condition; update) &#123;  </span><br><span class="line">    <span class="comment">// 循环体  </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其中：</p>
+<ul>
+<li><code>initialization</code> 是初始化表达式（只执行一次）。</li>
+<li><code>condition</code> 是条件表达式，在每次循环迭代前都会检查。</li>
+<li><code>update</code> 是更新表达式，在每次循环迭代后执行。</li>
+</ul>
+</li>
+</ol>
+<h3 id="嵌套循环"><a href="#嵌套循环" class="headerlink" title="嵌套循环"></a>嵌套循环</h3><p>嵌套循环是一个循环内部包含另一个或多个循环。通常用于处理二维数组或执行需要多个循环变量的情况。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; rows; i++) &#123;  </span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; columns; j++) &#123;  </span><br><span class="line">        <span class="comment">// 处理二维数组元素  </span></span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="break和continue"><a href="#break和continue" class="headerlink" title="break和continue"></a>break和continue</h3><ul>
+<li><strong>break</strong>：在循环中使用 <code>break</code> 语句会立即终止最内层的循环，并从循环后面的第一条语句开始执行。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;  </span><br><span class="line">    <span class="keyword">if</span> (i == <span class="number">5</span>) &#123;  </span><br><span class="line">        <span class="keyword">break</span>; <span class="comment">// 当 i 等于 5 时，终止循环  </span></span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="comment">// 其他代码  </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>continue</strong>：在循环中使用 <code>continue</code> 语句会跳过当前迭代中剩余的代码，并立即开始下一次迭代。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;  </span><br><span class="line">    <span class="keyword">if</span> (i == <span class="number">5</span>) &#123;  </span><br><span class="line">        <span class="keyword">continue</span>; <span class="comment">// 当 i 等于 5 时，跳过当前迭代  </span></span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="comment">// 当 i 不等于 5 时，这里的代码会被执行  </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="标记值控制循环"><a href="#标记值控制循环" class="headerlink" title="标记值控制循环"></a>标记值控制循环</h3><p>在某些情况下，你可能希望从外部控制循环的执行，比如通过某个条件提前退出多层嵌套的循环。Java 允许你在循环前使用标签（label），然后使用带标签的 <code>break</code> 语句来退出特定的循环。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">outerLoop:  </span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;  </span><br><span class="line">    innerLoop:  </span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; <span class="number">10</span>; j++) &#123;  </span><br><span class="line">        <span class="keyword">if</span> (someCondition) &#123;  </span><br><span class="line">            <span class="keyword">break</span> outerLoop; <span class="comment">// 退出外层循环  </span></span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意：虽然标签在某些情况下可能有用，但通常最好避免使用它们，因为它们可能会降低代码的可读性和可维护性。</p>
+<h3 id="输入和输出重定向"><a href="#输入和输出重定向" class="headerlink" title="输入和输出重定向"></a>输入和输出重定向</h3><p>在Java中，标准输入&#x2F;输出（如键盘输入和屏幕输出）通常是通过 <code>System.in</code>（<code>InputStream</code> 类型）和 <code>System.out</code>（<code>PrintStream</code> 类型）来处理的。然而，Java本身并不直接支持像Unix或Windows命令行那样的输入&#x2F;输出重定向。</p>
+<p>但是，你可以通过更改这些流引用的对象来间接地实现重定向。例如，你可以将 <code>System.setOut(new PrintStream(new FileOutputStream(&quot;output.txt&quot;)))</code> 用于将输出重定向到文件，但这并不是Java标准库直接提供的功能，而是需要额外的代码来实现。</p>
+<p>在命令行环境中，输入&#x2F;输出重定向通常是由操作系统或命令行解释器（如Unix shell或Windows命令提示符）提供的，而不是由Java程序本身提供的。</p>
+<h3 id="方法定义"><a href="#方法定义" class="headerlink" title="方法定义"></a>方法定义</h3><p><strong>修饰符</strong>：方法的修饰符定义了方法的访问级别（如<code>public</code>、<code>private</code>、<code>protected</code>等）、是否是静态的（<code>static</code>）、是否是最终的（<code>final</code>）、是否是同步的（<code>synchronized</code>）等。</p>
+<p><strong>返回值</strong>：方法可能会返回一个值给调用者。这个值的类型由返回类型指定。如果方法不返回任何值，则使用<code>void</code>关键字。</p>
+<p><strong>方法名</strong>：方法的名称，用于标识和调用该方法。</p>
+<p><strong>参数</strong>：方法可以接受零个或多个参数。每个参数都有一个类型和一个名称。</p>
+<p><strong>方法头</strong>：方法头包括修饰符、返回类型、方法名和参数列表。</p>
+<p><strong>方法体</strong>：方法体包含执行该方法时要执行的代码块。</p>
+<h3 id="形式参数与实际参数"><a href="#形式参数与实际参数" class="headerlink" title="形式参数与实际参数"></a>形式参数与实际参数</h3><p><strong>形式参数</strong>（也称为形参）：在方法定义中声明的参数。它们只是占位符，用于表示传递给方法的值。</p>
+<p><strong>实际参数</strong>（也称为实参）：在调用方法时传递给方法的实际值。</p>
+<h3 id="方法调用"><a href="#方法调用" class="headerlink" title="方法调用"></a>方法调用</h3><p>当你想要执行一个方法时，你会调用它。在Java中，这通常通过方法名加上括号（如果方法接受参数，则还需要参数值）来完成。调用方法时，实际参数会传递给方法的形式参数。</p>
+<p><strong>传值调用</strong>：在Java中，所有方法调用都是传值调用。这意味着当你将一个变量传递给方法时，实际上是将该变量的值复制给方法的形式参数。在方法内部对形式参数的修改不会影响到原始变量。</p>
+<h3 id="main方法（签名）和void方法"><a href="#main方法（签名）和void方法" class="headerlink" title="main方法（签名）和void方法"></a>main方法（签名）和void方法</h3><p><strong>main方法</strong>：每个Java应用程序的入口点都是<code>main</code>方法。它的签名是固定的：<code>public static void main(String[] args)</code>。这意味着<code>main</code>方法是公共的（<code>public</code>）、静态的（<code>static</code>）、没有返回值（<code>void</code>），并且接受一个字符串数组作为参数（<code>String[] args</code>）。</p>
+<p><strong>void方法</strong>：不返回任何值的方法使用<code>void</code>关键字作为返回类型。</p>
+<h3 id="args参数（第7章）"><a href="#args参数（第7章）" class="headerlink" title="args参数（第7章）"></a>args参数（第7章）</h3><p>在<code>main</code>方法的签名中，<code>String[] args</code>是命令行参数的数组。当你从命令行运行Java程序时，可以传递一些参数给程序。这些参数可以通过<code>args</code>数组在<code>main</code>方法内部访问。每个参数都是<code>args</code>数组的一个元素，你可以通过索引（从0开始）来访问它们。</p>
+<h3 id="方法签名和方法重载"><a href="#方法签名和方法重载" class="headerlink" title="方法签名和方法重载"></a>方法签名和方法重载</h3><p><strong>方法签名</strong>：方法签名是方法的唯一标识符，由方法名和参数列表（包括参数类型和顺序）组成。返回类型不是方法签名的一部分。</p>
+<p><strong>方法重载</strong>：在同一个类中，可以定义多个具有相同名称但不同签名的方法。这就是方法重载。通过方法重载，你可以根据传递的参数数量和类型来执行不同的操作。</p>
+<h3 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h3><p>在Java中，变量的作用域定义了该变量可以在哪里被访问。变量的作用域由其声明位置决定。</p>
+<p><strong>局部变量</strong>：在方法或代码块内部声明的变量是局部变量。它们必须在使用之前被赋值，否则编译器会报错。局部变量的作用域仅限于其声明的代码块或方法内部。</p>
+<p><strong>其他类型的变量</strong>：除了局部变量之外，还有类变量（也称为静态变量）和实例变量（也称为非静态变量）。类变量的作用域是整个类，而实例变量的作用域是类的实例（即对象）。这些变量可以在声明时初始化，也可以在需要时通过构造函数或其他方法进行初始化。</p>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p><strong>声明</strong>：声明数组时，需要指定数组的元素类型和数组名，但不需要指定数组的大小。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">java复制代码</span><br><span class="line"></span><br><span class="line"><span class="type">int</span>[] array; <span class="comment">// 声明一个整型数组</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>创建</strong>：创建数组时，需要指定数组的大小，并使用<code>new</code>关键字来分配内存空间。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">java复制代码</span><br><span class="line"></span><br><span class="line">array = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">10</span>]; <span class="comment">// 创建一个包含10个整数的数组</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>大小和默认值</strong>：数组的大小在创建时确定，之后不能改变。对于不同类型的数组，其默认值也不同。例如，整型数组的默认值为0，浮点型数组的默认值为0.0，对象类型数组的默认值为null。</p>
+<p><strong>通过下标访问元素</strong>：数组中的元素可以通过下标（索引）来访问，下标从0开始。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">java复制代码</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="variable">firstElement</span> <span class="operator">=</span> array[<span class="number">0</span>]; <span class="comment">// 访问数组的第一个元素</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>初始化语法</strong>：可以在声明并创建数组的同时进行初始化。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>[] array = <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;; <span class="comment">// 声明、创建并初始化数组  </span></span><br><span class="line"><span class="type">int</span>[] array2 = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;; <span class="comment">// 简化的初始化语法</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h3><p>在Java中，堆是内存的一部分，用于存储对象的实例。当你创建一个对象（包括数组）时，Java会在堆上为该对象分配内存空间。与局部变量（通常存储在栈上）不同，堆上的对象可以被多个引用共享。</p>
+<h3 id="foreach循环"><a href="#foreach循环" class="headerlink" title="foreach循环"></a>foreach循环</h3><p>foreach循环（也称为增强型for循环）是一种简化数组和集合遍历的语法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> element : array) &#123;  </span><br><span class="line">    System.out.println(element); <span class="comment">// 遍历数组并打印每个元素  </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="赋值和复制"><a href="#赋值和复制" class="headerlink" title="赋值和复制"></a>赋值和复制</h3><p><strong>赋值</strong>：将一个数组赋值给另一个数组时，实际上是复制了数组的引用，而不是数组的内容。因此，两个引用将指向同一个数组对象。</p>
+<p><strong>复制</strong>：要复制数组的内容，你需要使用循环或其他数组操作方法来逐个复制元素。Java中没有内置的方法来直接复制数组。</p>
+<h3 id="方法的参数或返回值"><a href="#方法的参数或返回值" class="headerlink" title="方法的参数或返回值"></a>方法的参数或返回值</h3><p><strong>参数</strong>：方法可以接受数组作为参数。当传递数组给方法时，实际上是传递了数组的引用。</p>
+<p><strong>返回值</strong>：方法也可以返回数组。返回的是数组的引用，而不是数组内容的副本。</p>
+<h3 id="可变长参数列表"><a href="#可变长参数列表" class="headerlink" title="可变长参数列表"></a>可变长参数列表</h3><p>Java 5引入了可变长参数列表（也称为varargs），它允许你定义一个可以接受任意数量参数的方法。这些参数被视为一个数组。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">printElements</span><span class="params">(<span class="type">int</span>... elements)</span> &#123;  </span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> element : elements) &#123;  </span><br><span class="line">        System.out.print(element + <span class="string">&quot; &quot;</span>);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;  </span><br><span class="line">  </span><br><span class="line"><span class="comment">// 调用方法时，可以传递任意数量的整数  </span></span><br><span class="line">printElements(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>);</span><br></pre></td></tr></table></figure>
+
+<p>在上面的例子中，<code>elements</code>实际上是一个整型数组，你可以在方法体内像操作普通数组一样操作它。注意，可变长参数必须是方法的最后一个参数，且一个方法只能有一个可变长参数。</p>
+<p>当然可以，以下是关于对象、类、UML表示方法、数据域（或称为字段、属性）、以及方法的解释：</p>
+<h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><p><strong>状态</strong>：对象的状态指的是对象当前所具有的特征或属性，这些特征或属性在程序中通常通过数据域（或称为字段、属性）来表示。</p>
+<p><strong>行为</strong>：对象的行为指的是对象可以执行的操作或动作，这些操作或动作在程序中通常通过方法来定义。</p>
+<p><strong>标识符</strong>：对象的标识符（或称为引用）是用于在程序中唯一标识和引用该对象的名称或变量。</p>
+<h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><p><strong>模板、蓝本或合约</strong>：类可以被视为一个模板或蓝本，它定义了对象应该具有的状态和行为。通过类，我们可以创建（实例化）具有相同状态和行为特征的对象。类也可以被看作是一种合约，它规定了对象必须遵循的规则和行为。</p>
+<p><strong>实例化</strong>：从类创建对象的过程称为实例化。通过实例化，我们可以根据类的定义创建多个具有相同特征的对象。</p>
+<h3 id="UML（统一建模语言）表示方法"><a href="#UML（统一建模语言）表示方法" class="headerlink" title="UML（统一建模语言）表示方法"></a>UML（统一建模语言）表示方法</h3><p>UML是一种用于对软件密集系统进行可视化建模的标准语言。在UML中，类通常使用矩形来表示，其中包含类名、属性（数据域）和方法。类之间的关系（如继承、关联、聚合等）也可以通过UML图来表示。</p>
+<h3 id="数据域（字段、属性）"><a href="#数据域（字段、属性）" class="headerlink" title="数据域（字段、属性）"></a>数据域（字段、属性）</h3><p><strong>定义</strong>：数据域是类中定义的变量，用于存储对象的状态信息。它们可以是基本数据类型（如int、double等）或引用类型（如其他类、数组等）。</p>
+<p><strong>访问</strong>：数据域可以通过公共的getter和setter方法进行访问和修改，以保持对象的封装性。</p>
+<p><strong>默认值</strong>：在Java中，数据域会根据其数据类型具有默认值（如基本数据类型的默认值为0或false，引用类型的默认值为null）。</p>
+<p><strong>与局部变量区分</strong>：数据域是类的成员变量，它们属于类的所有实例；而局部变量是在方法或代码块中定义的，只存在于该方法或代码块的执行期间。</p>
+<p><strong>get和set方法</strong>：getter方法（通常命名为<code>getXxx()</code>）用于返回数据域的值，而setter方法（通常命名为<code>setXxx(Yyy value)</code>）用于设置数据域的值。使用getter和setter方法可以实现数据封装，并提供对数据域的访问控制。</p>
+<p><strong>实例变量和静态变量</strong>：实例变量是类的非静态成员变量，它们属于类的每个实例；而静态变量（也称为类变量）是类的静态成员变量，它们属于类本身，与类的所有实例共享。</p>
+<p><strong>常量</strong>：常量是值在程序运行期间不可变的变量。在Java中，常量使用<code>final</code>关键字声明，可以是基本数据类型或引用类型。</p>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p><strong>定义</strong>：方法是类中定义的函数，用于描述对象的行为。方法包含方法名、参数列表、返回值类型和方法体（即方法的实现）。</p>
+<p><strong>调用</strong>：通过对象（或类，对于静态方法）和方法名（以及可能的参数）来调用方法。方法的执行会执行方法体中的代码，并可能返回结果。</p>
+<p><strong>实例方法和静态方法</strong>：实例方法是类的非静态方法，它们属于类的实例，需要通过对象来调用；而静态方法是类的静态成员方法，它们属于类本身，可以通过类名直接调用。静态方法不能直接访问类的非静态成员（包括实例变量和非静态方法），因为静态方法是与类的所有实例无关的。</p>
+<h3 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h3><p>构造方法是一种特殊的方法，用于初始化对象的状态。</p>
+<ul>
+<li><strong>与普通方法的区别</strong>：<ul>
+<li><strong>名字</strong>：构造方法的名字必须与类名相同。</li>
+<li><strong>返回值</strong>：构造方法没有返回值类型，也不使用<code>return</code>语句返回任何值。</li>
+</ul>
+</li>
+<li><strong>new 运算符</strong>：使用<code>new</code>运算符和构造方法来创建类的实例（对象）。<code>new</code>运算符会调用构造方法，分配内存空间，并将对象的引用返回给变量。</li>
+<li><strong>默认构造方法</strong>：如果一个类没有定义任何构造方法，编译器会自动为它提供一个无参数的默认构造方法。但是，一旦类中定义了任何构造方法（包括带参数的），编译器就不会再自动提供默认构造方法了。</li>
+</ul>
+<h3 id="可见性修饰符"><a href="#可见性修饰符" class="headerlink" title="可见性修饰符"></a>可见性修饰符</h3><p>Java提供了四种可见性修饰符来控制类、方法和变量的访问权限。</p>
+<ul>
+<li><strong>public</strong>：任何类都可以访问。</li>
+<li><strong>private</strong>：只有当前类可以访问，子类和其他类都无法访问。</li>
+<li><strong>default（无修饰符）</strong>：也被称为包级私有，只有同一个包中的类可以访问。</li>
+<li><strong>protected</strong>（虽然您没有提到，但这也是一种常见的修饰符）：同一个包中的类和子类都可以访问，即使子类位于另一个包中。</li>
+</ul>
+<h3 id="不可变对象"><a href="#不可变对象" class="headerlink" title="不可变对象"></a>不可变对象</h3><p>不可变对象是指其状态在创建之后不能再被修改的对象。为了创建不可变对象，通常需要：</p>
+<ul>
+<li>将所有的字段都设置为<code>private</code>和<code>final</code>。</li>
+<li>不提供任何修改字段值的方法。</li>
+<li>确保所有的字段都被正确地初始化。</li>
+</ul>
+<h3 id="变量作用域-1"><a href="#变量作用域-1" class="headerlink" title="变量作用域"></a>变量作用域</h3><ul>
+<li><strong>类变量（静态变量）</strong>：属于类本身，由<code>static</code>修饰，与类的所有实例共享。</li>
+<li><strong>局部变量</strong>：在方法、构造方法或初始化块中定义的变量，其作用域为定义它的代码块。</li>
+</ul>
+<h3 id="this引用"><a href="#this引用" class="headerlink" title="this引用"></a>this引用</h3><p><code>this</code>是一个引用，指向当前对象（正在被实例化的对象）。</p>
+<ul>
+<li><strong>引用隐藏数据域</strong>：如果构造方法或方法中的参数名与类的数据域名相同，可以使用<code>this</code>来区分它们。</li>
+<li><strong>调用方法</strong>：<code>this</code>也可以用来调用类中的其他方法或构造方法（在构造方法中调用其他构造方法时，必须放在构造方法的第一行）。</li>
+<li><strong>重载的构造函数</strong>：在一个类中可以有多个构造方法，这被称为构造方法的重载。可以使用<code>this()</code>来从一个构造方法中调用另一个构造方法。</li>
+</ul>
+<h3 id="Java类库的使用"><a href="#Java类库的使用" class="headerlink" title="Java类库的使用"></a>Java类库的使用</h3><p>Java类库（Java API）提供了大量的预定义类和接口，这些类和接口封装了常见的数据结构和算法，以及系统级的服务。例如，<code>java.util</code>包提供了集合框架（如<code>ArrayList</code>、<code>HashMap</code>等）、日期和时间工具（如<code>Calendar</code>、<code>Date</code>等）、随机数生成器等。<code>java.io</code>包提供了文件和网络的输入&#x2F;输出功能。通过使用这些类库，我们可以更加高效地开发Java应用程序，而无需从头开始实现所有功能。</p>
+<h3 id="抽象-Abstraction"><a href="#抽象-Abstraction" class="headerlink" title="抽象 (Abstraction)"></a>抽象 (Abstraction)</h3><p>抽象是一种将类的实现和使用分离的设计原则。在面向对象编程中，抽象允许我们定义类的基本性质，而不必关心这些性质的具体实现。通过抽象，我们可以隐藏类的内部细节，只提供必要的接口供外部使用。</p>
+<p><strong>类的实现和使用分离</strong>：当我们定义一个类时，我们实际上是在定义一个抽象的数据类型。类的实现（即如何完成某个操作或存储数据）是私有的，而类的使用（即如何与该类的对象进行交互）是通过公开的接口（如方法）进行的。这样，类的使用者就不必关心类的内部实现细节，只需知道如何使用类提供的接口即可。</p>
+<h3 id="合约-Contract"><a href="#合约-Contract" class="headerlink" title="合约 (Contract)"></a>合约 (Contract)</h3><p>在面向对象编程中，一个类可以被视为一个合约，它定义了类的对象应该具有的状态和行为。这个合约由类的方法和数据域组成，以及这些方法应该如何行为的描述。</p>
+<p><strong>方法和数据域的集合</strong>：类的方法定义了对象可以执行的操作，而类的数据域定义了对象的状态。这些方法和数据域共同构成了类的合约，描述了类的对象应该具有的行为和状态。</p>
+<p><strong>如何行为的描述</strong>：除了定义方法和数据域之外，类的合约还包括对这些方法和数据域如何行为的描述。这些描述通常通过方法的文档注释（如Java中的Javadoc注释）来提供，以便类的使用者了解如何使用这些方法以及它们的行为。</p>
+<h3 id="封装-Encapsulation"><a href="#封装-Encapsulation" class="headerlink" title="封装 (Encapsulation)"></a>封装 (Encapsulation)</h3><p>封装是面向对象编程的四大特性之一（封装、继承、多态、抽象）。封装的主要目的是隐藏对象的内部状态和实现细节，只提供必要的接口供外部使用。通过封装，我们可以保护对象的状态不被外部直接修改，从而确保对象的完整性和安全性。</p>
+<p><strong>对用户隐藏实现的细节</strong>：封装通过将对象的内部状态和实现细节隐藏起来，只提供必要的接口供外部使用，从而实现了对用户隐藏实现的细节。这样，用户就不必关心对象的内部实现细节，只需知道如何使用对象提供的接口即可。</p>
+<h3 id="类的关系"><a href="#类的关系" class="headerlink" title="类的关系"></a>类的关系</h3><p>在面向对象编程中，类之间的关系是通过关联、聚集和组合等概念来描述的。</p>
+<p>**关联 (Association)**：关联表示两个类之间存在某种关系。这种关系可以是单向的（如一个类包含另一个类的引用），也可以是双向的（如两个类都包含对方的引用）。关联可以是强关联（如一个对象必须存在另一个对象才能存在），也可以是弱关联（如一个对象可以存在而不依赖于另一个对象）。</p>
+<p>**聚集 (Aggregation)**：聚集是一种特殊的关联关系，表示“has a”关系。在聚集关系中，一个对象（称为聚集对象）包含另一个对象（称为成员对象）的引用。与关联关系不同的是，聚集关系中的成员对象是聚集对象的一部分，但成员对象可以独立于聚集对象存在。聚集关系通常用于表示整体与部分之间的关系。</p>
+<p>**组合 (Composition)**：组合是聚集的一种特殊形式，也称为强聚集。在组合关系中，一个对象（称为组合对象）包含另一个对象（称为组件对象）的引用，并且组件对象不能独立于组合对象存在。也就是说，当组合对象被销毁时，其所有的组件对象也会被销毁。组合关系通常用于表示更紧密的整体与部分之间的关系。</p>
+<h3 id="基本数据类的对象类型"><a href="#基本数据类的对象类型" class="headerlink" title="基本数据类的对象类型"></a>基本数据类的对象类型</h3><p>在Java等编程语言中，基本数据类型的对象类型通常是通过包装类（如<code>Integer</code>、<code>Double</code>等）来实现的。这些包装类提供了对基本数据类型的对象封装，使得基本数据类型也可以具有对象的特性（如可以调用方法等）。</p>
+<p><strong>类名、构造函数</strong>：每个基本数据类型的包装类都有一个与基本数据类型名称相对应的类名（如<code>Integer</code>、<code>Double</code>等）。这些类还提供了构造函数，用于创建包装类对象并初始化其值。</p>
+<p><strong>自动装箱和拆箱</strong>：在Java中，自动装箱和拆箱是Java编译器提供的一种便捷功能。自动装箱允许将基本数据类型自动转换为对应的包装类对象（如将<code>int</code>值自动转换为<code>Integer</code>对象），而自动拆箱则允许将包装类对象自动转换回基本数据类型（如将<code>Integer</code>对象自动转换为<code>int</code>值）。这种自动转换大大简化了基本数据类型和包装类之间的转换过程。</p>
+<h3 id="BigInteger-和-BigDecimal"><a href="#BigInteger-和-BigDecimal" class="headerlink" title="BigInteger 和 BigDecimal"></a>BigInteger 和 BigDecimal</h3><p><strong>BigInteger</strong> 和 <strong>BigDecimal</strong> 是 Java 提供的两个类，用于处理任意精度的整数和浮点数运算。</p>
+<h4 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h4><p><strong>BigInteger</strong> 和 <strong>BigDecimal</strong> 都提供了多种构造函数，用于从各种类型（如字符串、基本数据类型等）创建它们的实例。</p>
+<ul>
+<li><p>从字符串创建：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">BigInteger</span> <span class="variable">bigInt</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BigInteger</span>(<span class="string">&quot;12345678901234567890&quot;</span>);  </span><br><span class="line"><span class="type">BigDecimal</span> <span class="variable">bigDecimal</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BigDecimal</span>(<span class="string">&quot;123.45678901234567890&quot;</span>);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="不可变对象-1"><a href="#不可变对象-1" class="headerlink" title="不可变对象"></a>不可变对象</h4><p><strong>BigInteger</strong> 和 <strong>BigDecimal</strong> 的实例都是不可变的。一旦创建了一个对象，就不能修改它的值。要更改其值，必须创建一个新的对象。</p>
+<h4 id="字符串字面量"><a href="#字符串字面量" class="headerlink" title="字符串字面量"></a>字符串字面量</h4><p>在 Java 中，字符串字面量（如 <code>&quot;Hello, World!&quot;</code>）是 <code>String</code> 类的实例。它们是不可变的，这意味着一旦创建了字符串字面量，就不能更改其内容。</p>
+<h4 id="a-不能按下标访问字符，用-charAt"><a href="#a-不能按下标访问字符，用-charAt" class="headerlink" title="a 不能按下标访问字符，用 charAt"></a>a 不能按下标访问字符，用 charAt</h4><p>在 Java 中，<code>String</code> 类提供了一个 <code>charAt(int index)</code> 方法，用于获取指定索引处的字符。由于字符串是不可变的，因此即使你获取了某个字符，也不能直接修改它。</p>
+<h4 id="限定的字符串-interned"><a href="#限定的字符串-interned" class="headerlink" title="限定的字符串 - interned"></a>限定的字符串 - interned</h4><p>Java 字符串池（String Pool）是一个特殊的存储区域，用于存储字符串字面量。当使用 <code>==</code> 运算符比较两个字符串字面量时，如果它们的内容相同（即它们是相同的字符串字面量），则比较结果为 <code>true</code>。这是因为编译器在编译时将这些字面量放入了字符串池中，并且为它们分配了相同的引用。然而，对于通过 <code>new</code> 关键字创建的 <code>String</code> 对象（如 <code>new String(&quot;abc&quot;)</code>），它们与通过字面量创建的 <code>String</code> 对象（如 <code>&quot;abc&quot;</code>）在内存中是分开的，因此使用 <code>==</code> 运算符比较它们将返回 <code>false</code>。</p>
+<h4 id="基本数据类型和字符串的转换"><a href="#基本数据类型和字符串的转换" class="headerlink" title="基本数据类型和字符串的转换"></a>基本数据类型和字符串的转换</h4><p>Java 提供了多种方法来实现基本数据类型和字符串之间的转换。例如，可以使用 <code>String.valueOf(int i)</code> 将整数转换为字符串，使用 <code>Integer.parseInt(String s)</code> 将字符串转换为整数。类似地，对于 <code>BigDecimal</code> 和其他数值类型，也有相应的方法来进行转换。</p>
+<h4 id="格式化字符串-format-方法"><a href="#格式化字符串-format-方法" class="headerlink" title="格式化字符串 - format 方法"></a>格式化字符串 - format 方法</h4><p>Java 中的 <code>String.format()</code> 方法允许你使用格式化字符串来创建字符串。你可以指定占位符和格式说明符来定义如何格式化数据。例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">java复制代码</span><br><span class="line"></span><br><span class="line"><span class="type">String</span> <span class="variable">formatted</span> <span class="operator">=</span> String.format(<span class="string">&quot;The number is: %d&quot;</span>, <span class="number">123</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="StringBuilder-和-StringBuffer"><a href="#StringBuilder-和-StringBuffer" class="headerlink" title="StringBuilder 和 StringBuffer"></a>StringBuilder 和 StringBuffer</h3><p><strong>StringBuilder</strong> 和 <strong>StringBuffer</strong> 都是可变字符串类，用于在内存中高效地构建和修改字符串。它们之间的主要区别在于线程安全性：<code>StringBuffer</code> 是线程安全的，而 <code>StringBuilder</code> 则不是。因此，在单线程环境中，使用 <code>StringBuilder</code> 通常比使用 <code>StringBuffer</code> 更快。</p>
+<h4 id="length、capacity、charAt"><a href="#length、capacity、charAt" class="headerlink" title="length、capacity、charAt"></a>length、capacity、charAt</h4><ul>
+<li><strong>length</strong>：对于 <code>String</code>、<code>StringBuilder</code> 和 <code>StringBuffer</code>，<code>length()</code> 方法返回字符串或字符序列的长度（即字符的数量）。</li>
+<li><strong>capacity</strong>：这是 <code>StringBuilder</code> 和 <code>StringBuffer</code> 特有的属性。它表示字符序列的当前容量。当向 <code>StringBuilder</code> 或 <code>StringBuffer</code> 添加字符时，如果当前容量不足以容纳新的字符序列，则它们会自动增长。但是，你可以使用构造函数或 <code>ensureCapacity(int minimumCapacity)</code> 方法来预先设置或增加容量，以减少自动增长的开销。</li>
+<li><strong>charAt</strong>：与 <code>String</code> 类似，<code>StringBuilder</code> 和 <code>StringBuffer</code> 也提供了 <code>charAt(int index)</code> 方法来返回指定索引处的字符。</li>
+</ul>
+<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p>继承是面向对象编程中的一个核心概念，它允许我们根据一个已存在的类（称为父类或基类）来定义一个新的类（称为子类或派生类）。子类可以继承父类的所有可访问的（非<code>private</code>）属性和方法。</p>
+<h4 id="子类和父类"><a href="#子类和父类" class="headerlink" title="子类和父类"></a>子类和父类</h4><ul>
+<li><strong>子类</strong>：继承父类属性和方法的类。</li>
+<li><strong>父类</strong>：被子类继承的类。</li>
+</ul>
+<h4 id="继承的数据域和方法"><a href="#继承的数据域和方法" class="headerlink" title="继承的数据域和方法"></a>继承的数据域和方法</h4><ul>
+<li><strong>可访问的数据域和方法</strong>：子类可以访问并继承父类中所有非<code>private</code>的属性和方法。</li>
+<li><strong>private数据域</strong>：<code>private</code>修饰符限制了数据域只能在定义它的类内部访问，因此子类无法直接访问父类的<code>private</code>数据域。但是，子类可以通过父类提供的公共（<code>public</code>）或受保护（<code>protected</code>）方法来间接访问和修改这些<code>private</code>数据域。</li>
+<li><strong>重名</strong>：如果子类定义了与父类同名的属性或方法（但参数列表不同，对于方法而言），则子类的属性或方法会覆盖（或隐藏）父类的同名属性或方法。这被称为属性或方法的“隐藏”，而不是真正的“覆盖”或“重写”（对于方法而言）。如果要覆盖父类的方法，则需要确保方法签名（方法名和参数列表）完全相同，并且访问权限不能低于父类中被覆盖的方法。</li>
+</ul>
+<h4 id="单一继承"><a href="#单一继承" class="headerlink" title="单一继承"></a>单一继承</h4><p>Java（以及其他许多面向对象编程语言）只支持单一继承，即一个类只能直接继承自一个父类。但是，通过继承链，一个类可以间接继承多个类的属性和方法。</p>
+<h4 id="super关键字"><a href="#super关键字" class="headerlink" title="super关键字"></a>super关键字</h4><ul>
+<li><code>super</code>关键字在Java中用于指代父类。</li>
+<li><strong>调用父类中的方法</strong>：在子类中，可以使用<code>super.methodName(parameters)</code>来调用父类中定义的方法。</li>
+<li><strong>调用父类中的构造方法</strong>：在子类的构造方法中，可以使用<code>super(parameters)</code>来调用父类的构造方法。注意，<code>super()</code>调用必须是子类构造方法中的第一条语句（除了变量声明和初始化块）。</li>
+</ul>
+<h4 id="构造方法链"><a href="#构造方法链" class="headerlink" title="构造方法链"></a>构造方法链</h4><p>当创建子类对象时，父类的构造方法会首先被调用（通过隐式或显式的<code>super()</code>调用），然后才是子类的构造方法。这个过程称为构造方法链。如果父类自己没有显式地调用其超类的构造方法（即没有<code>super()</code>调用），则会自动调用超类的无参数构造方法（如果存在）。</p>
+<h4 id="父类先于子类完成初始化-顺序"><a href="#父类先于子类完成初始化-顺序" class="headerlink" title="父类先于子类完成初始化 - 顺序"></a>父类先于子类完成初始化 - 顺序</h4><ul>
+<li>当创建子类对象时，首先会调用父类的构造方法，完成父类的初始化。</li>
+<li>然后，子类的构造方法会被调用，完成子类的初始化。</li>
+</ul>
+<h4 id="方法重写-Override"><a href="#方法重写-Override" class="headerlink" title="方法重写 (Override)"></a>方法重写 (Override)</h4><ul>
+<li><strong>方法重写</strong>：子类可以提供一个与父类方法签名相同但实现不同的方法。这被称为方法重写。</li>
+<li><strong>方法签名</strong>：方法签名包括方法名和参数列表（不包括返回类型，因为Java 5之后返回类型不是方法签名的一部分）。</li>
+<li><strong>与重载区分</strong>：方法重载（Overloading）是在同一个类中定义多个同名但参数列表不同的方法。而方法重写（Overriding）是子类提供与父类方法签名相同但实现不同的方法。</li>
+</ul>
+<p>注意：在重写父类方法时，子类方法的访问权限不能低于父类中被重写的方法的访问权限。例如，如果父类方法是<code>public</code>的，则子类中的重写方法也必须是<code>public</code>的。</p>
+<ol>
+<li><strong>所有类都继承自<code>java.lang.Object</code></strong></li>
+</ol>
+<p>在Java中，所有的类都直接或间接地继承自<code>java.lang.Object</code>类。这意味着，如果你没有明确地指定一个类继承自其他类，那么它默认继承自<code>Object</code>类。因此，所有的Java对象都拥有<code>Object</code>类定义的方法，如<code>toString()</code>, <code>equals()</code>, <code>hashCode()</code>, <code>clone()</code>, <code>finalize()</code>, <code>wait()</code>, <code>notify()</code>, 和 <code>notifyAll()</code>等。</p>
+<ol start="2">
+<li><strong><code>toString</code>方法</strong></li>
+</ol>
+<p><code>toString</code>方法是<code>Object</code>类的一个方法，它返回一个表示该对象的字符串。当你尝试打印一个对象（例如，使用<code>System.out.println(someObject);</code>）时，默认会调用该对象的<code>toString</code>方法。因此，如果你想要自定义一个类在打印时的表现形式，你应该重写其<code>toString</code>方法。</p>
+<ol start="3">
+<li><strong><code>equals</code>方法</strong></li>
+</ol>
+<p><code>equals</code>方法也是<code>Object</code>类的一个方法，用于比较两个对象是否相等。默认情况下，<code>equals</code>方法的行为与<code>==</code>操作符相同，即比较两个对象的引用是否相同。但是，在很多情况下，我们想要比较两个对象的内容是否相等，而不是它们的引用是否相同。因此，对于需要基于内容进行比较的类，我们应该重写其<code>equals</code>方法。</p>
+<ol start="4">
+<li><strong>多态</strong></li>
+</ol>
+<p>多态是面向对象编程的三大支柱之一（另外两个是封装和继承）。多态意味着一个引用变量可以引用多种实际类型的对象，并且程序会在运行时确定应该调用哪个方法。这主要通过方法的动态绑定（或晚期绑定）来实现。</p>
+<ol start="5">
+<li><strong>使用父类对象的地方可以使用子类对象</strong></li>
+</ol>
+<p>这是多态的一个核心特性。在Java中，你可以将一个子类的对象赋值给一个父类类型的变量。然后，你可以通过这个父类类型的变量来调用子类中重写或继承的方法。这就是所谓的“向上转型”（upcasting）。</p>
+<ol start="6">
+<li><strong>动态绑定</strong></li>
+</ol>
+<p>动态绑定（或晚期绑定）是Java实现多态性的关键机制。当程序在运行时确定应该调用哪个方法时，就发生了动态绑定。这与静态绑定（或早期绑定）相反，静态绑定在编译时确定应该调用哪个方法。</p>
+<p>在Java中，方法的调用是动态绑定的，除非方法被声明为<code>final</code>或<code>static</code>，或者是在一个编译时常量表达式中调用。这意味着，即使你有一个父类类型的变量，并且你通过这个变量调用了一个方法，Java也会在运行时检查该变量实际引用的对象的类型，并调用该类型中定义的方法（如果该方法被重写了）。</p>
+<ol start="7">
+<li><strong>声明类型和实际类型</strong></li>
+</ol>
+<ul>
+<li><strong>声明类型</strong>：这是你在代码中声明的变量的类型。例如，在<code>Parent obj = new Child();</code>中，<code>Parent</code>是声明类型。</li>
+<li><strong>实际类型</strong>：这是变量实际引用的对象的类型。在上面的例子中，<code>Child</code>是实际类型。</li>
+</ul>
+<ol>
+<li><strong>对象类型转换</strong></li>
+</ol>
+<p>Java支持两种类型的转换：隐式转换（也称为自动类型转换）和显式转换（也称为强制类型转换）。</p>
+<ul>
+<li><strong>隐式转换</strong>：当一种类型可以自动转换为另一种类型时，就会发生隐式转换。例如，将一个小整数赋值给一个<code>double</code>变量时，小整数会自动被提升为<code>double</code>类型。</li>
+<li><strong>显式转换</strong>：当需要明确告诉编译器进行类型转换时，就需要使用显式转换。这通常发生在从一种类型到另一种类型的转换可能导致数据丢失或精度降低时。例如，将一个<code>double</code>类型的值赋值给一个<code>int</code>类型的变量时，你需要使用显式转换来告诉编译器你接受这种可能的精度损失。在Java中，显式转换是通过类型转换操作符（<code>(Type)</code>）来完成的。</li>
+</ul>
+<p>希望这些解释能帮助您更好地理解Java的这些核心概念！</p>
+<h3 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h3><p>在Java中，异常处理是一种机制，用于处理在程序执行期间可能发生的错误情况。这些错误情况可能是由于各种原因导致的，如用户输入错误、硬件故障、资源不足等。Java提供了<code>try-catch-finally</code>语句来处理这些异常。</p>
+<h4 id="try-catch-finally"><a href="#try-catch-finally" class="headerlink" title="try-catch-finally"></a>try-catch-finally</h4><ul>
+<li><code>try</code>块：包含可能引发异常的代码。</li>
+<li><code>catch</code>块：用于捕获<code>try</code>块中抛出的异常，并定义当异常发生时应该执行的代码。可以有多个<code>catch</code>块来捕获不同类型的异常。</li>
+<li><code>finally</code>块：无论是否发生异常，<code>finally</code>块中的代码都会执行。通常用于释放资源（如关闭文件、断开数据库连接等）。</li>
+</ul>
+<h4 id="声明、抛出和捕获异常"><a href="#声明、抛出和捕获异常" class="headerlink" title="声明、抛出和捕获异常"></a>声明、抛出和捕获异常</h4><ul>
+<li><strong>声明异常</strong>：在方法签名中使用<code>throws</code>关键字来声明该方法可能抛出的异常。</li>
+<li><strong>抛出异常</strong>：使用<code>throw</code>关键字来抛出一个异常。这通常在发现不可恢复错误或异常条件时使用。</li>
+<li><strong>捕获异常</strong>：在<code>catch</code>块中捕获异常，并定义如何处理它。</li>
+</ul>
+<h3 id="异常类型"><a href="#异常类型" class="headerlink" title="异常类型"></a>异常类型</h3><p>Java中的异常类继承自<code>Throwable</code>类，其中有两个主要的子类：<code>Error</code>和<code>Exception</code>。</p>
+<ul>
+<li><p><strong>Error</strong>：表示系统级错误，通常是由JVM（Java虚拟机）抛出的，应用程序通常无法处理这些错误。</p>
+</li>
+<li><p>Exception</p>
+<p>：表示应用程序级错误，可以由应用程序捕获并处理。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Exception</span><br></pre></td></tr></table></figure>
+
+<p>类又可以分为两种：</p>
+<ul>
+<li><strong>免检异常（Unchecked Exception）</strong>：通常是运行时异常（<code>RuntimeException</code>及其子类），这些异常在编译时不需要显式捕获。</li>
+<li><strong>必检异常（Checked Exception）</strong>：除了运行时异常之外的其他异常，这些异常在编译时必须显式捕获或声明。</li>
+</ul>
+</li>
+</ul>
+<p>你提到的<code>RuntimeException</code>是免检异常的基类，而<code>IOException</code>是必检异常的一个例子，通常用于表示I&#x2F;O操作中的错误。</p>
+<h3 id="File类"><a href="#File类" class="headerlink" title="File类"></a>File类</h3><p><code>java.io.File</code>类是Java中用于文件和目录路径名的抽象表示形式。它不用于读取或写入文件内容，而是用于创建、删除、重命名文件和目录，以及检查文件或目录是否存在、是否可读、是否可写等。</p>
+<h3 id="PrintWriter类"><a href="#PrintWriter类" class="headerlink" title="PrintWriter类"></a>PrintWriter类</h3><p><code>java.io.PrintWriter</code>类是一个用于写入字符流的便捷类。它提供了多种写入文本到文件或输出流的方法，如<code>println()</code>, <code>print()</code>, <code>write()</code>等。构造函数通常需要一个输出流（如<code>FileOutputStream</code>）作为参数。</p>
+<h3 id="Scanner类"><a href="#Scanner类" class="headerlink" title="Scanner类"></a>Scanner类</h3><p><code>java.util.Scanner</code>类是一个用于解析基本类型和字符串的简单文本扫描器。它可以读取来自多种输入源的数据，如文件、字符串、控制台等。构造函数可以接受多种类型的参数，如<code>File</code>、<code>InputStream</code>、<code>Readable</code>等。使用<code>Scanner</code>类可以方便地读取文本文件中的数据。</p>
+<h3 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h3><p><code>instanceof</code> 是 Java 中的一个关键字，用于测试对象是否是一个类的实例，或者其超类（或接口）的实例。</p>
+<p>示例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Object</span> <span class="variable">obj</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();  </span><br><span class="line"><span class="keyword">if</span> (obj <span class="keyword">instanceof</span> ArrayList) &#123;  </span><br><span class="line">    System.out.println(<span class="string">&quot;obj 是 ArrayList 的实例&quot;</span>);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="ArrayList-类"><a href="#ArrayList-类" class="headerlink" title="ArrayList 类"></a>ArrayList 类</h3><p><code>ArrayList</code> 是 Java 集合框架中的一个类，它提供了动态数组的功能。</p>
+<h4 id="构造函数-1"><a href="#构造函数-1" class="headerlink" title="构造函数"></a>构造函数</h4><p><code>ArrayList</code> 有多个构造函数，但最常用的可能是无参构造函数和一个接收初始容量的构造函数。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ArrayList&lt;String&gt; list1 = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();  <span class="comment">// 无参构造函数  </span></span><br><span class="line">ArrayList&lt;String&gt; list2 = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(<span class="number">10</span>); <span class="comment">// 指定初始容量为 10</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h4><ul>
+<li><code>get(int index)</code>: 返回列表中指定位置的元素。</li>
+<li><code>set(int index, E element)</code>: 用指定元素替换列表中指定位置的元素。</li>
+<li><code>size()</code>: 返回列表中的元素数量。</li>
+<li><code>add(E e)</code>: 将指定元素添加到列表的末尾。</li>
+<li><code>add(int index, E element)</code>: 在列表的指定位置插入指定元素。</li>
+<li><code>remove(int index)</code>: 移除列表中指定位置的元素。</li>
+<li><code>remove(Object o)</code>: 移除列表中首次出现的指定元素（如果存在）。</li>
+<li><code>clear()</code>: 移除列表中的所有元素。</li>
+</ul>
+<h3 id="数组与-ArrayList-的区别"><a href="#数组与-ArrayList-的区别" class="headerlink" title="数组与 ArrayList 的区别"></a>数组与 ArrayList 的区别</h3><ul>
+<li><strong>长度</strong>：数组的长度是固定的，一旦创建就不能改变。而 <code>ArrayList</code> 的长度是动态的，可以根据需要增长和缩短。</li>
+<li><strong>类型检查</strong>：数组在编译时进行类型检查，而 <code>ArrayList</code> 在运行时进行类型检查（对于泛型化的 <code>ArrayList</code>）。</li>
+<li><strong>内容</strong>：数组可以包含基本数据类型和对象，但泛型化的 <code>ArrayList</code> 只能包含对象（可以通过自动装箱&#x2F;拆箱包含基本数据类型的包装类）。</li>
+<li><strong>方法</strong>：数组提供的方法非常有限，而 <code>ArrayList</code> 提供了许多有用的方法，如 <code>add</code>、<code>remove</code>、<code>contains</code> 等。</li>
+</ul>
+<h3 id="protected"><a href="#protected" class="headerlink" title="protected"></a>protected</h3><p><code>protected</code> 是 Java 中的一个访问修饰符。当一个类的成员（字段、方法或内部类）被声明为 <code>protected</code> 时，它可以在同一包中的其他类中被访问，也可以被不同包中的子类访问。但是，它不能被不同包中的非子类直接访问。</p>
+<h3 id="子类可见性不能小于父类"><a href="#子类可见性不能小于父类" class="headerlink" title="子类可见性不能小于父类"></a>子类可见性不能小于父类</h3><p>在 Java 中，子类不能降低父类成员的可见性。也就是说，如果父类的一个成员是 <code>public</code> 的，那么子类不能将它声明为 <code>protected</code>、<code>package-private</code>（默认访问级别）或 <code>private</code>。但是，子类可以提高父类成员的可见性，例如将 <code>protected</code> 成员声明为 <code>public</code>。</p>
+<h3 id="final"><a href="#final" class="headerlink" title="final"></a>final</h3><p><code>final</code> 是 Java 中的一个关键字，可以用于类、方法和变量。</p>
+<ul>
+<li><strong>final 类</strong>：当一个类被声明为 <code>final</code> 时，它不能被继承。</li>
+<li><strong>final 方法</strong>：当一个方法被声明为 <code>final</code> 时，它不能在子类中被重写（override）。</li>
+<li><strong>final 变量</strong>：当一个变量（包括实例变量、静态变量和局部变量）被声明为 <code>final</code> 时，它的值在初始化之后就不能被修改（对于基本数据类型）或重新引用（对于对象引用）。但是，如果 <code>final</code> 变量引用的是一个对象，那么对象的内部状态仍然可以被修改（除非该对象也被声明为不可变的）。</li>
+</ul>
+<p><code>try-with-resources</code> 是 Java 7 引入的一个特性，用于自动管理资源，主要是那些实现了 <code>AutoCloseable</code> 或 <code>Closeable</code> 接口的资源。这些资源在 <code>try</code> 代码块执行完毕后会自动关闭，无需显式调用 <code>close()</code> 方法。这有助于减少由于忘记关闭资源（如文件、网络连接、数据库连接等）而导致的资源泄露问题。</p>
+<p>以下是 <code>try-with-resources</code> 的基本用法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> (  </span><br><span class="line">    <span class="comment">// 声明并初始化资源，这些资源需要实现 AutoCloseable 或 Closeable 接口  </span></span><br><span class="line">    <span class="type">BufferedReader</span> <span class="variable">br</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(<span class="keyword">new</span> <span class="title class_">FileReader</span>(<span class="string">&quot;file.txt&quot;</span>));  </span><br><span class="line">    <span class="comment">// 可以声明多个资源，以分号分隔  </span></span><br><span class="line">) &#123;  </span><br><span class="line">    <span class="comment">// 使用资源的代码  </span></span><br><span class="line">    String line;  </span><br><span class="line">    <span class="keyword">while</span> ((line = br.readLine()) != <span class="literal">null</span>) &#123;  </span><br><span class="line">        System.out.println(line);  </span><br><span class="line">    &#125;  </span><br><span class="line">      </span><br><span class="line">    <span class="comment">// 这里不需要显式调用 br.close()，因为 try-with-resources 会自动处理  </span></span><br><span class="line">&#125; <span class="keyword">catch</span> (IOException e) &#123;  </span><br><span class="line">    <span class="comment">// 处理异常  </span></span><br><span class="line">    e.printStackTrace();  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="comment">// 在 try 代码块结束后，br 资源会被自动关闭</span></span><br></pre></td></tr></table></figure>
+
+<p>try-with-resources<code>的工作原理是，在</code>try<code>代码块执行完毕后（无论是正常结束还是由于异常而退出），Java 会自动调用这些资源的</code>close()<code>方法。这通过编译时生成的特殊代码实现，这些代码会在</code>try&#96; 代码块结束时确保资源的关闭。</p>
+<p>需要注意的是，如果 <code>close()</code> 方法在调用时抛出异常，并且 <code>try</code> 代码块中也抛出了异常，那么 <code>close()</code> 方法抛出的异常会被抑制（suppressed），而 <code>try</code> 代码块中抛出的原始异常会被传播给调用者。你可以通过调用 <code>Throwable.getSuppressed()</code> 方法来获取这些被抑制的异常。</p>
+<h3 id="抽象类-Abstract-Class"><a href="#抽象类-Abstract-Class" class="headerlink" title="抽象类 (Abstract Class)"></a>抽象类 (Abstract Class)</h3><p><strong>抽象类</strong> 是一种不能被实例化的类，即不能使用<code>new</code>关键字来创建它的对象。抽象类主要用于定义一些通用的属性和方法，这些属性和方法可以由它的子类来继承。</p>
+<p><strong>abstract关键字</strong> 用于声明一个抽象类或抽象方法。如果一个类包含至少一个抽象方法，那么这个类就必须被声明为抽象类。</p>
+<p><strong>抽象方法</strong> 是一种没有方法体的方法，它只是声明了方法的名字和参数列表，没有具体的实现。任何非抽象子类都必须提供抽象方法的具体实现。</p>
+<p>例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title class_">AbstractExample</span> &#123;  </span><br><span class="line">    <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title function_">doSomething</span><span class="params">()</span>; <span class="comment">// 抽象方法  </span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">doAnotherThing</span><span class="params">()</span> &#123; <span class="comment">// 非抽象方法  </span></span><br><span class="line">        <span class="comment">// 方法体  </span></span><br><span class="line">    &#125;  </span><br><span class="line">&#125;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">class</span> <span class="title class_">NonAbstractExample</span> <span class="keyword">extends</span> <span class="title class_">AbstractExample</span> &#123;  </span><br><span class="line">    <span class="meta">@Override</span>  </span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">doSomething</span><span class="params">()</span> &#123; <span class="comment">// 必须提供抽象方法的实现  </span></span><br><span class="line">        <span class="comment">// 方法体  </span></span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Number类和Calendar类"><a href="#Number类和Calendar类" class="headerlink" title="Number类和Calendar类"></a>Number类和Calendar类</h3><p><strong>Number类</strong> 是Java中所有数值类的超类（如Integer, Float, Double等）。它提供了数值转换的一些方法，但它本身是一个抽象类，不能直接实例化。</p>
+<p><strong>Integer类</strong> 是Number类的一个子类，它代表了一个整数值，并提供了多种方法来操作整数，包括<code>toString()</code>方法，该方法用于将整数转换为字符串。</p>
+<p><strong>Calendar类</strong> 是一个抽象类，它用于封装日历相关的功能，如日期和时间的计算。但是，Calendar类通常不会直接实例化，而是使用其子类（如<code>GregorianCalendar</code>）的实例。</p>
+<h3 id="接口-Interface"><a href="#接口-Interface" class="headerlink" title="接口 (Interface)"></a>接口 (Interface)</h3><p><strong>接口</strong> 是Java中一种完全抽象的类，它不能被实例化，但可以定义常量和方法。接口中的方法都是抽象方法，没有方法体。一个类可以实现一个或多个接口，实现接口就必须提供接口中所有方法的具体实现。</p>
+<p><strong>Interface关键字</strong> 用于声明一个接口。</p>
+<p>例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">MyInterface</span> &#123;  </span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">myMethod</span><span class="params">()</span>; <span class="comment">// 抽象方法  </span></span><br><span class="line">    <span class="type">int</span> <span class="variable">MY_CONSTANT</span> <span class="operator">=</span> <span class="number">10</span>; <span class="comment">// 常量  </span></span><br><span class="line">&#125;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span> <span class="keyword">implements</span> <span class="title class_">MyInterface</span> &#123;  </span><br><span class="line">    <span class="meta">@Override</span>  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">myMethod</span><span class="params">()</span> &#123; <span class="comment">// 实现接口中的方法  </span></span><br><span class="line">        <span class="comment">// 方法体  </span></span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Comparable接口"><a href="#Comparable接口" class="headerlink" title="Comparable接口"></a>Comparable接口</h3><p><strong>Comparable接口</strong> 是Java中的一个标准接口，它定义了一个名为<code>compareTo</code>的方法。该方法用于比较当前对象与另一个对象的顺序。实现了<code>Comparable</code>接口的类的对象可以被用于<code>Collections.sort()</code>等方法进行排序。</p>
+<p><strong>sort方法</strong> 是Java集合框架中的一个方法，用于对集合中的元素进行排序。如果集合中的元素实现了<code>Comparable</code>接口，则可以直接调用<code>sort</code>方法进行排序。</p>
+<p><strong>返回值</strong>：<code>compareTo</code>方法返回一个整数，如果当前对象小于、等于或大于指定的对象，则分别返回负整数、零或正整数。</p>
+<h3 id="Cloneable接口"><a href="#Cloneable接口" class="headerlink" title="Cloneable接口"></a>Cloneable接口</h3><p><strong>Cloneable接口</strong> 是一个标记接口（即不包含任何方法的接口），用于指示一个类的对象可以被克隆。要复制一个实现了<code>Cloneable</code>接口的对象，可以使用<code>Object</code>类的<code>clone()</code>方法。如果一个类没有实现<code>Cloneable</code>接口，并且调用了它的<code>clone()</code>方法，那么会抛出<code>CloneNotSupportedException</code>异常。</p>
+<p>注意：使用<code>clone()</code>方法时，通常需要重写<code>clone()</code>方法，并在其内部调用<code>super.clone()</code>以确保正确的行为。同时，还需要注意对象的深拷贝和浅拷贝问题。</p>
+<h3 id="JavaFX-应用程序"><a href="#JavaFX-应用程序" class="headerlink" title="JavaFX 应用程序"></a>JavaFX 应用程序</h3><p>JavaFX 是一个用于构建富客户端应用程序的Java库。它提供了许多用于创建图形用户界面（GUI）的类和工具。</p>
+<h4 id="继承-1"><a href="#继承-1" class="headerlink" title="继承"></a>继承</h4><p>在JavaFX中，你可能会看到某些类继承自其他类，特别是当你查看控件（如按钮、标签等）或布局容器（如<code>StackPane</code>和<code>GridPane</code>）时。继承允许子类使用（或重写）父类的属性和方法。</p>
+<h4 id="start-方法"><a href="#start-方法" class="headerlink" title="start() 方法"></a>start() 方法</h4><p>在JavaFX应用程序中，<code>start()</code>方法是<code>Application</code>类的一个关键方法。当你调用<code>Application.launch()</code>方法启动JavaFX应用程序时，JavaFX运行时系统会调用这个<code>start()</code>方法。这个方法通常用于设置应用程序的根场景（Scene）和舞台（Stage）。</p>
+<h4 id="launch-方法"><a href="#launch-方法" class="headerlink" title="launch() 方法"></a>launch() 方法</h4><p><code>launch()</code>方法是<code>Application</code>类的一个静态方法，用于启动JavaFX应用程序。通常，你不需要重写这个方法，而是直接调用它以启动你的应用程序。这个方法会创建一个新的线程来运行你的<code>start()</code>方法，这样你的主线程（通常是事件调度线程）就可以继续执行其他任务。</p>
+<h4 id="show-方法"><a href="#show-方法" class="headerlink" title="show() 方法"></a>show() 方法</h4><p>在JavaFX中，<code>show()</code>方法通常不是<code>Application</code>类或其子类的一部分。但是，它可能是某个特定控件或窗口（如<code>Stage</code>）的方法，用于显示该控件或窗口。例如，在<code>Stage</code>类中，<code>show()</code>方法用于显示舞台。</p>
+<h3 id="StackPane-和-GridPane"><a href="#StackPane-和-GridPane" class="headerlink" title="StackPane 和 GridPane"></a>StackPane 和 GridPane</h3><p><code>StackPane</code>和<code>GridPane</code>是JavaFX中用于布局控件的两种容器。</p>
+<h4 id="StackPane"><a href="#StackPane" class="headerlink" title="StackPane"></a>StackPane</h4><p><code>StackPane</code>是一个简单的布局容器，它将子节点堆叠在一起。默认情况下，子节点会按照它们被添加到<code>StackPane</code>中的顺序进行堆叠，并且后添加的节点会出现在先添加的节点之上。你可以通过修改子节点的z-index来改变它们的堆叠顺序。</p>
+<h4 id="GridPane"><a href="#GridPane" class="headerlink" title="GridPane"></a>GridPane</h4><p><code>GridPane</code>是一个基于网格的布局容器，允许你以行和列的方式组织子节点。你可以指定每个子节点应该占据哪些行和列，以及它在这些行和列中的位置和对齐方式。<code>GridPane</code>还提供了许多用于调整行和列大小以及设置间隔和填充的选项。</p>
+<h4 id="Add"><a href="#Add" class="headerlink" title="Add"></a>Add</h4><p>在JavaFX中，”Add”通常指的是将控件添加到布局容器（如<code>StackPane</code>或<code>GridPane</code>）中的操作。这可以通过调用容器的<code>getChildren().add()</code>方法来实现，或者（对于<code>GridPane</code>）使用更具体的方法（如<code>add(Node child, int columnIndex, int rowIndex)</code>）来指定子节点应该占据的网格位置。</p>
+<h3 id="9-事件和事件处理程序"><a href="#9-事件和事件处理程序" class="headerlink" title="9 事件和事件处理程序"></a>9 事件和事件处理程序</h3><p>在JavaFX中，事件和事件处理程序是构建交互式用户界面（UI）的关键组成部分。</p>
+<ul>
+<li>Button、ActionEvent、setOnAction<ul>
+<li><code>Button</code> 是JavaFX中的一个控件，用于在UI中显示一个按钮。</li>
+<li><code>ActionEvent</code> 是一个特殊的事件类型，当某个动作（如按钮点击）发生时触发。</li>
+<li><code>setOnAction</code> 是<code>Button</code>类中的一个方法，用于设置当按钮被点击时要执行的事件处理程序。这个处理程序通常是一个实现了<code>EventHandler&lt;ActionEvent&gt;</code>接口的类或Lambda表达式。</li>
+</ul>
+</li>
+</ul>
+<h3 id="Lambda语法"><a href="#Lambda语法" class="headerlink" title="Lambda语法"></a>Lambda语法</h3><p>Lambda表达式是Java 8及以后版本中引入的一个新特性，它允许你以简洁的方式表示匿名函数（或方法）。在JavaFX中，Lambda表达式经常用于定义事件处理程序。</p>
+<p>例如，为按钮的点击事件设置一个简单的Lambda表达式事件处理程序：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">button.setOnAction(event -&gt; &#123;  </span><br><span class="line">    System.out.println(<span class="string">&quot;Button clicked!&quot;</span>);  </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h3><p>内部类是定义在另一个类（外部类）内部的类。JavaFX本身并不直接依赖于内部类来实现事件处理，但内部类（特别是匿名内部类）在Java中经常被用作事件处理程序的简单实现方式。然而，随着Lambda表达式的引入，使用内部类来定义事件处理程序的情况已经大大减少。</p>
+<h3 id="Timeline-和-KeyFrame"><a href="#Timeline-和-KeyFrame" class="headerlink" title="Timeline 和 KeyFrame"></a>Timeline 和 KeyFrame</h3><p><code>Timeline</code> 和 <code>KeyFrame</code> 是JavaFX动画API的一部分。</p>
+<ul>
+<li><strong>Timeline</strong> 是一个容器，用于控制多个<code>KeyFrame</code>的执行。你可以设置<code>Timeline</code>的循环次数、播放速度等属性。</li>
+<li><strong>KeyFrame</strong> 表示动画中的一个时间点，它包含在该时间点应该执行的动作。你可以为<code>KeyFrame</code>设置持续时间（从上一个<code>KeyFrame</code>或<code>Timeline</code>开始的时间），以及一个或多个事件处理程序（在到达该时间点时执行）。</li>
+</ul>
+<h3 id="TextField"><a href="#TextField" class="headerlink" title="TextField"></a>TextField</h3><p><code>TextField</code> 是JavaFX中的一个控件，用于接收用户输入的文本。</p>
+<ul>
+<li><strong>getText</strong> 方法用于获取<code>TextField</code>中当前显示的文本。</li>
+<li><strong>setText</strong> 方法用于设置<code>TextField</code>中显示的文本。</li>
+</ul>
+<p>例如，使用<code>TextField</code>并获取&#x2F;设置其文本：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">TextField</span> <span class="variable">textField</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">TextField</span>();  </span><br><span class="line">textField.setText(<span class="string">&quot;Hello, World!&quot;</span>); <span class="comment">// 设置文本  </span></span><br><span class="line"><span class="type">String</span> <span class="variable">userInput</span> <span class="operator">=</span> textField.getText(); <span class="comment">// 获取文本</span></span><br></pre></td></tr></table></figure>
+
+<p>这些概念一起为JavaFX应用程序提供了丰富的用户交互和动态行为的能力。</p>
+<p>1.重写，覆写，重载</p>
+<p>2.五种访问修饰符</p>
+<ol start="3">
+<li></li>
+</ol>
+<p>1.重写（覆写）：子类如果继承了一个父类，那么子类就会拥有父类的方法(但是不包括构造方法)和属性，此时如果在子类中定义了一个和父类一样的方法，这种现象叫做子类覆写(<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E9%87%8D%E5%86%99&spm=1001.2101.3001.7020">重写</a>)了父类的方法</p>
+<p>2.面试题:请说明重载和重写的区别?</p>
+<p>●重载:</p>
+<p>发生在一个类中<br>    对返回值没有要求(但是正常都会保持- -致)<br>    对访问权限没有要求(但是正常都会保持一致)<br>    表示重载的单词是overloading</p>
+<p>●重写:</p>
+<p>发生在继承关系中(子类和父类)<br>    子类不能拥有比父类更小的访问权限<br>    如果子类和父类访问权限–致则返回值必须要相同，否则可以不同<br>    表示重写的单词是override，除了构造方法，其他都有</p>
+<p>重写 总结：<br>1.发生在父类与子类之间<br>2.方法名，参数列表，返回类型（除过子类中方法的返回类型是父类中返回类型的子类）必须相同<br>3.访问修饰符的限制一定要大于被重写方法的访问修饰符（public&gt;protected&gt;default(相当于friendly)&gt;private)<br>4.重写方法一定不能抛出新的检查异常或者比被重写方法申明更加宽泛的检查型异常</p>
+<p>默认权限修饰符是default</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>public</th>
+<th>protected</th>
+<th>default（空的）</th>
+<th>private</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>同一类中</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>同一包中(子类与无关类)</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td>不同包的子类</td>
+<td>√</td>
+<td>√</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>不同包中的无关类</td>
+<td>√</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h4><ul>
+<li><strong>private</strong>：该常量只能在 <code>MyClass</code> 类内部访问。</li>
+<li><strong>static</strong>：该常量属于类本身，而不是某个实例。所有实例共享同一个值，并且可以在没有实例的情况下访问。</li>
+<li><strong>final</strong>：该常量一旦被赋值后就不能再修改。</li>
+</ul>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://zhao-qicheng.github.io/2024/06/16/Java%E6%98%93%E9%94%99%E7%82%B9/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+    
+      <a href="/2024/05/26/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Typora/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">如何使用Typora</div>
+      </a>
+    
+  </nav>
+
+  
+   
+  
+   
+    <script src="https://cdn.staticfile.org/twikoo/1.4.18/twikoo.all.min.js"></script>
+    <div id="twikoo" class="twikoo"></div>
+    <script>
+        twikoo.init({
+            envId: ""
+        })
+    </script>
+ 
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2024
+        <i class="ri-heart-fill heart_icon"></i> 天神决斗王
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="不一样的烟火"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.staticfile.org/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+
+<script src="/js/clickBoom1.js"></script>
+ 
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.staticfile.org/clipboard.js/2.0.10/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+ 
+<script src="/js/dz.js"></script>
+ 
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+</body>
+
+</html>
